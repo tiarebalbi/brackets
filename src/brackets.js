@@ -289,6 +289,14 @@ define(function (require, exports, module) {
                     });
                 }
             }
+            
+            // See if any startup files were passed to the application
+            if (brackets.startupFiles) {
+                brackets.startupFiles.forEach(function (filename) {
+                    CommandManager.execute(Commands.FILE_OPEN, { fullPath: filename });
+                });
+                brackets.startupFiles = null;
+            }
         });
         
         // Check for updates
