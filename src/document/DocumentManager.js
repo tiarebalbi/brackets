@@ -950,7 +950,7 @@ define(function (require, exports, module) {
         // Make checks below case-INsensitive
         ext = ext.toLowerCase();
 
-        return Languages.getLanguageForFileExtension(ext);
+        return Languages.getLanguageForFileExtension(ext) || Languages.defaultLanguage;
     };
     
     /**
